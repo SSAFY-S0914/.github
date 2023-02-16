@@ -50,6 +50,7 @@ id_map = {
     "": "",
 }
 
+students.sort()
 
 while len(students) % row_length != 0:
     students.append("")
@@ -65,16 +66,8 @@ for base in range(0, len(students), row_length):
         github = "https://github.com/" + id_map[students[idx]]
         output += indent * 2 + '<td align="center">\n'
         if students[idx] != "":
-            output += indent * 3 + '<a href="' + github + '">\n'
-            output += (
-                indent * 4
-                + '<img src="'
-                + github
-                + '.png" '
-                + 'alt="'
-                + students[idx]
-                + '" />\n'
-            )
+            output += indent * 3 + f'<a href="{github}">\n'
+            output += indent * 4 + f'<img src="{github}".png alt="{students[idx]}" />\n'
             output += indent * 3 + "</a>\n"
         output += indent * 2 + "</td>\n"
 
@@ -86,8 +79,8 @@ for base in range(0, len(students), row_length):
         github = "https://github.com/" + id_map[students[idx]]
         output += indent * 2 + '<td align="center">\n'
         if students[idx] != "":
-            output += indent * 3 + '<a href="' + github + '">\n'
-            output += indent * 4 + "<b>" + students[idx] + "</b>\n"
+            output += indent * 3 + f'<a href="{github}">\n'
+            output += indent * 4 + f"<b>{students[idx]}</b>\n"
             output += indent * 3 + "</a>\n"
         output += indent * 2 + "</td>\n"
 
