@@ -1,29 +1,7 @@
-row_length = 6
+row_length = 4
 indent = "  "
 
-students = [
-    "김선형",
-    "김승규",
-    "김정락",
-    "김준현",
-    "박소민",
-    "박영서",
-    "박지환",
-    "배미혜",
-    "변정원",
-    "유다은",
-    "유승아",
-    "윤경민",
-    "이남곤",
-    "이동현",
-    "이예은",
-    "이채림",
-    "전주영",
-    "조인혁",
-    "지상일",
-    "최용태",
-    "하정호",
-]
+students = ["김선형", "김승규", "박소민", "유다은", "유승아", "이남곤", "이채림", "전주영", "변정원", "조인혁"]
 
 id_map = {
     "김선형": "tjsguddl96",
@@ -67,7 +45,7 @@ for base in range(0, len(students), row_length):
         output += indent * 2 + '<td align="center">\n'
         if students[idx] != "":
             output += indent * 3 + f'<a href="{github}">\n'
-            output += indent * 4 + f'<img src="{github}".png alt="{students[idx]}" />\n'
+            output += indent * 4 + f'<img src="{github}.png" alt="{students[idx]}" />\n'
             output += indent * 3 + "</a>\n"
         output += indent * 2 + "</td>\n"
 
@@ -86,7 +64,14 @@ for base in range(0, len(students), row_length):
 
     output += indent + "</tr>\n"
 
-    output += "</table>\n"
+output += "</table>\n"
 
 
 print(output)
+
+# output = []
+
+# for student in students:
+#     output.append(f"[{student}](https://github.com/{id_map[student]})")
+
+# print(" / ".join(output))
